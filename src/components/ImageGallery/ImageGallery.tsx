@@ -10,13 +10,11 @@ type Props = {
 const ImageGallery: React.FC<Props> = ({ items, onOpen }: Props) => {
   return (
     <ul className={css.list}>
-      {items.map((item) => {
-        return (
-          <li className={css.item} key={item.user.id}>
-            <ImageCard item={item} onOpen={onOpen} />
-          </li>
-        );
-      })}
+      {items.map((item) => (
+        <li className={css.item} key={`${item.user.id}-${item.urls.small}`}>
+          <ImageCard item={item} onOpen={onOpen} />
+        </li>
+      ))}
     </ul>
   );
 };
