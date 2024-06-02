@@ -1,11 +1,11 @@
 import { MdError } from "react-icons/md";
 import css from "./ErrorMessage.module.css";
 
-const ErrorMessage = () => {
+const ErrorMessage: React.FC = () => {
   return (
-    <p className={css.message}>
+    <p className={css.text}>
       <MdError className={css.icon} size={22} color={"LightCoral"} />
-      <b>Sorry, something went wrong!</b>
+      <b>Please try again!</b>
     </p>
   );
 };

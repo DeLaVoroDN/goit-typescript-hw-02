@@ -1,9 +1,15 @@
 import { SlLike } from "react-icons/sl";
 
 import { FiUserCheck } from "react-icons/fi";
+import { APIresults } from "../../api";
 import css from "./ImageCard.module.css";
 
-const ImageCard = ({
+type Props = {
+  item: APIresults;
+  onOpen: (imgUrl: string, imgAlt: string) => void;
+};
+
+const ImageCard: React.FC<Props> = ({
   item: {
     alt_description: alt,
     urls: { small, regular },
@@ -11,7 +17,7 @@ const ImageCard = ({
     likes,
   },
   onOpen,
-}) => {
+}: Props) => {
   return (
     <div className={css.item}>
       <img
